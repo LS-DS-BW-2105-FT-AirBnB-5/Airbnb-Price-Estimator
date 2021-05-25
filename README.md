@@ -2,7 +2,7 @@
 
 The objective of any good cloud based app or service is to provide a solution to a consumers need. In this instance lets assume that you are an Airbnb host with multiple rental properties and yu need to have access current local pricing for comparable properties. Accurate and timely data affords you the ability to stay competitive while hopefully maximizing your properties profitaility.
 
-- [Big picture](#big-picture)
+- [App at a Glance](#App-at-a-Glance)
 - [Tech stack](#tech-stack)
 - [Getting started](#getting-started)
 - [File structure](#file-structure)
@@ -10,7 +10,7 @@ The objective of any good cloud based app or service is to provide a solution to
 - [Deploying to Heroku](#deploying-to-heroku)
 - [Example: Machine learning](#example-machine-learning)
 
-## Big picture
+## App at a Glance
 
 Here's a template with starter code to deploy an API for your machine learning model and data visualizations.  You're encouraged (but not required) to use this template for your Build Week.
 
