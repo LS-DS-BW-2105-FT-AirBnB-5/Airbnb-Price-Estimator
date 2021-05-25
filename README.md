@@ -7,8 +7,6 @@ The objective of any good cloud based app or service is to provide a solution to
 - [Getting started](#getting-started)
 - [File structure](#file-structure)
 - [More instructions](#more-instructions)
-- [Deploying to Heroku](#deploying-to-heroku)
-- [Example: Machine learning](#example-machine-learning)
 
 ## App at a Glance
 
