@@ -27,16 +27,13 @@ This application resided "here" utilizing FastAPI and deployed on Heroku.
 
 ## Getting started
 
-EDA with IPYNB
+###EDA with IPYNB
 
 Our first step is to look at the raw data and determine feature importances. From a quick exporitory analsys perspective, "XYZ Features" seemed to be the most highly correlated to the overall listing price for a given property. 
 
-Multiple Models
+###Multiple Models
 
 First step in the developmet required a model that can accurately predict the price of short-term rental units given a set of features, such as location, season, and day of the week. For a baseline perdictive model we chose to use "XGBoost" with default parameters. Based on the relevant metrics the next choice for accurate and generalizable modeling we selected a "Nearest Neighbor" with hyperparameters optimized through grid search.
-
-
-
 
 Launch the app
 
