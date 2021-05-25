@@ -3,7 +3,7 @@
 The objective of any good cloud based app or service is to provide a solution to a consumers need. In this instance lets assume that you are an Airbnb host with multiple rental properties and yu need to have access current local pricing for comparable properties. Accurate and timely data affords you the ability to stay competitive while hopefully maximizing your properties profitaility.
 
 - [App at a Glance](#App-at-a-Glance)
-- [Tech stack](#tech-stack)
+- [Our Tech stack](#our-tech-stack)
 - [Getting started](#getting-started)
 - [File structure](#file-structure)
 - [More instructions](#more-instructions)
@@ -12,13 +12,17 @@ The objective of any good cloud based app or service is to provide a solution to
 
 ## App at a Glance
 
-Here's a template with starter code to deploy an API for your machine learning model and data visualizations.  You're encouraged (but not required) to use this template for your Build Week.
+Utiizing data from "dates" and "city", the first step is to clean and explore our data, then build a model to accurately predict rental prices within a user selected range for comparison pricing selection.
 
-You can deploy on Heroku in 10 minutes. Here's the template deployed as-is: [https://ds-bw-test.herokuapp.com/](https://ds-bw-test.herokuapp.com/)
+This application resided "here" utilizing FastAPI and deployed on Heroku.  
 
-Instead of Flask, we'll use FastAPI. It's similar, but faster, with automatic interactive docs. For more comparison, see [FastAPI for Flask Users](https://amitness.com/2020/06/fastapi-vs-flask/).
 
-## Tech stack
+[https://ds-bw-test.herokuapp.com/](https://ds-bw-test.herokuapp.com/)
+Instead of Flask, we'll use FastAPI. It's similar, but faster, with automatic interactive docs. 
+For more comparison, see [FastAPI for Flask Users](https://amitness.com/2020/06/fastapi-vs-flask/).
+
+
+## Our Tech stack
 - [FastAPI](https://fastapi.tiangolo.com/): Web framework. Like Flask, but faster, with automatic interactive docs.
 - [Flake8](https://flake8.pycqa.org/en/latest/): Linter, enforces PEP8 style guide.
 - [Heroku](https://devcenter.heroku.com/): Platform as a service, hosts your API.
@@ -28,14 +32,10 @@ Instead of Flask, we'll use FastAPI. It's similar, but faster, with automatic in
 
 ## Getting started
 
-[Create a new repository from this template.](https://github.com/Lambda-School-Labs/ds-bw/generate)
+EDA with IPYNB
 
 Clone the repo
-```
-git clone https://github.com/YOUR-GITHUB-USERNAME/YOUR-REPO-NAME.git
 
-cd YOUR-REPO-NAME
-```
 
 Install dependencies
 ```
