@@ -10,14 +10,14 @@ The objective of any good cloud based app or service is to provide a solution to
 - [Deploying to Heroku](#deploying-to-heroku)
 - [Example: Machine learning](#example-machine-learning)
 
-# App at a Glance
+## App at a Glance
 
 Utiizing data from "dates" and "city", the first step is to clean and explore our data, then build a model to accurately predict rental prices within a user selected range for comparison pricing selection.
 
 This application resided "here" utilizing FastAPI and deployed on Heroku.  
 
 
-# Our Tech stack
+## Our Tech stack
 - [FastAPI](https://fastapi.tiangolo.com/): Web framework. Like Flask, but faster, with automatic interactive docs.
 - [Flake8](https://flake8.pycqa.org/en/latest/): Linter, enforces PEP8 style guide.
 - [Heroku](https://devcenter.heroku.com/): Platform as a service, hosts your API.
@@ -25,24 +25,25 @@ This application resided "here" utilizing FastAPI and deployed on Heroku.
 - [Plotly](https://plotly.com/python/): Visualization library, for Python & JavaScript.
 - [Pytest](https://docs.pytest.org/en/stable/): Testing framework, runs your unit tests.
 
-# Getting started
+## Getting started
 
-##EDA with IPYNB
+**EDA with IPYNB**
 
 Our first step is to look at the raw data and determine feature importances. From a quick exporitory analsys perspective, "XYZ Features" seemed to be the most highly correlated to the overall listing price for a given property. 
 
-##Multiple Models
+**Multiple Models**
 
 First step in the developmet required a model that can accurately predict the price of short-term rental units given a set of features, such as location, season, and day of the week. For a baseline perdictive model we chose to use "XGBoost" with default parameters. Based on the relevant metrics the next choice for accurate and generalizable modeling we selected a "Nearest Neighbor" with hyperparameters optimized through grid search.
 
-Launch the app
+**Marching toward an MVP**
+
+With a relatively accurate and generalizable model its time to deploy an initial version to Heroku to establish a minimally viable cloud based application.
+
+**Application Functionalities**
 
 Click the `/predict` endpoint's green button.
 
 ![image](https://user-images.githubusercontent.com/7278219/87965845-0532dc80-ca82-11ea-9690-b4c195a648d6.png)
-
-
-You'll see the endpoint's documentation, including:
 
 - Your function's docstring, """Make random baseline predictions for classification problem."""
 - Request body example, as [JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) (like a Python dictionary)
@@ -58,12 +59,6 @@ Click the "Execute" button. Then scroll down.
 
 ![image](https://user-images.githubusercontent.com/7278219/87966896-948cbf80-ca83-11ea-9740-d0801148b1f3.png)
 
-You'll see the server response, including:
-
-- [Code 200](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200), which means the request was successful.
-- The response body, as [JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON), with random baseline predictions for a classification problem.
-
-***Your job is to replace these random predictions with real predictions from your model.*** Use this starter code and documentation to deploy your model as an API!
 
 ## File structure
 
@@ -106,34 +101,6 @@ When your API receives a POST request, FastAPI automatically parses and validate
 - [calmcode.io videos - FastAPI - Testing](https://calmcode.io/fastapi/testing-one.html)
 - [calmcode.io videos - pytest](https://calmcode.io/pytest/introduction.html)
 
-## More instructions
-
-Activate the virtual environment
-```
-pipenv shell
-```
-
-Install additional packages
-```
-pipenv install PYPI-PACKAGE-NAME
-```
-
-Launch a Jupyter notebook
-```
-jupyter notebook
-```
-
-Run tests
-```
-pytest
-```
-
-Run linter
-```
-flake8
-```
-
-[calmcode.io videos - flake8](https://calmcode.io/flake8/introduction.html)
 
 ## Deploying to Heroku
 
