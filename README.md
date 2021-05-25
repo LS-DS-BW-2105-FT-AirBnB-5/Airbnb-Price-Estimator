@@ -10,14 +10,14 @@ The objective of any good cloud based app or service is to provide a solution to
 - [Deploying to Heroku](#deploying-to-heroku)
 - [Example: Machine learning](#example-machine-learning)
 
-## App at a Glance
+# App at a Glance
 
 Utiizing data from "dates" and "city", the first step is to clean and explore our data, then build a model to accurately predict rental prices within a user selected range for comparison pricing selection.
 
 This application resided "here" utilizing FastAPI and deployed on Heroku.  
 
 
-## Our Tech stack
+# Our Tech stack
 - [FastAPI](https://fastapi.tiangolo.com/): Web framework. Like Flask, but faster, with automatic interactive docs.
 - [Flake8](https://flake8.pycqa.org/en/latest/): Linter, enforces PEP8 style guide.
 - [Heroku](https://devcenter.heroku.com/): Platform as a service, hosts your API.
@@ -25,13 +25,13 @@ This application resided "here" utilizing FastAPI and deployed on Heroku.
 - [Plotly](https://plotly.com/python/): Visualization library, for Python & JavaScript.
 - [Pytest](https://docs.pytest.org/en/stable/): Testing framework, runs your unit tests.
 
-## Getting started
+# Getting started
 
-###EDA with IPYNB
+##EDA with IPYNB
 
 Our first step is to look at the raw data and determine feature importances. From a quick exporitory analsys perspective, "XYZ Features" seemed to be the most highly correlated to the overall listing price for a given property. 
 
-###Multiple Models
+##Multiple Models
 
 First step in the developmet required a model that can accurately predict the price of short-term rental units given a set of features, such as location, season, and day of the week. For a baseline perdictive model we chose to use "XGBoost" with default parameters. Based on the relevant metrics the next choice for accurate and generalizable modeling we selected a "Nearest Neighbor" with hyperparameters optimized through grid search.
 
