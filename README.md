@@ -17,11 +17,6 @@ Utiizing data from "dates" and "city", the first step is to clean and explore ou
 This application resided "here" utilizing FastAPI and deployed on Heroku.  
 
 
-[https://ds-bw-test.herokuapp.com/](https://ds-bw-test.herokuapp.com/)
-Instead of Flask, we'll use FastAPI. It's similar, but faster, with automatic interactive docs. 
-For more comparison, see [FastAPI for Flask Users](https://amitness.com/2020/06/fastapi-vs-flask/).
-
-
 ## Our Tech stack
 - [FastAPI](https://fastapi.tiangolo.com/): Web framework. Like Flask, but faster, with automatic interactive docs.
 - [Flake8](https://flake8.pycqa.org/en/latest/): Linter, enforces PEP8 style guide.
@@ -34,38 +29,21 @@ For more comparison, see [FastAPI for Flask Users](https://amitness.com/2020/06/
 
 EDA with IPYNB
 
-Clone the repo
+Our first step is to look at the raw data and determine feature importances. From a quick exporitory analsys perspective, "XYZ Features" seemed to be the most highly correlated to the overall listing price for a given property. 
+
+Multiple Models
+
+First step in the developmet required a model that can accurately predict the price of short-term rental units given a set of features, such as location, season, and day of the week. For a baseline perdictive model we chose to use "XGBoost" with default parameters. Based on the relevant metrics the next choice for accurate and generalizable modeling we selected a "Nearest Neighbor" with hyperparameters optimized through grid search.
 
 
-Install dependencies
-```
-pipenv install --dev
-```
 
-Activate the virtual environment
-```
-pipenv shell
-```
 
 Launch the app
-```
-uvicorn app.main:app --reload
-```
-
-Go to `localhost:8000` in your browser.
-
-![image](https://user-images.githubusercontent.com/7278219/87965040-c18ba300-ca80-11ea-894f-d51a69d52f8a.png)
-
-You'll see your API documentation:
-
-- Your app's title, "DS API"
-- Your description, "Lorem ipsum"
-- An endpoint for POST requests, `/predict`
-- An endpoint for GET requests, `/viz/{statecode}`
 
 Click the `/predict` endpoint's green button.
 
 ![image](https://user-images.githubusercontent.com/7278219/87965845-0532dc80-ca82-11ea-9690-b4c195a648d6.png)
+
 
 You'll see the endpoint's documentation, including:
 
