@@ -17,6 +17,8 @@ pandas = "*"
 plotly = "*"
 sqlalchemy = "*"
 uvicorn = {extras = ["standard"], version = "*"}
+xgboost = "*"
+catboost = "*"
 
 [requires]
 python_version = "3"
