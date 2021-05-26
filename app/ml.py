@@ -2,6 +2,11 @@
 
 import logging
 import random
+import sklearn
+import xgboost
+import catboost
+import category_encoders
+import pickle
 
 from fastapi import APIRouter
 import pandas as pd
@@ -9,7 +14,8 @@ from pydantic import BaseModel, Field, validator
 
 log = logging.getLogger(__name__)
 router = APIRouter()
-
+model_location = r'C:\Users\yaobv\group_build\Airbnb-Price-Estimator\models\catboost 75.sav'
+model = pickle.load(open(model_location, 'rb'))
 
 class Item(BaseModel):
     """Use this data model to parse the request body JSON."""

@@ -17,10 +17,11 @@ pandas = "*"
 plotly = "*"
 sqlalchemy = "*"
 uvicorn = {extras = ["standard"], version = "*"}
-xgboost = "*"
-catboost = "*"
+category-encoders = "==2.2.2"
 sklearn = "*"
-category-encoders = "*"
+xgboost = "==0.90"
+catboost = "==0.25.1"
+scikit-learn = "*"
 
 [requires]
 python_version = "3"
