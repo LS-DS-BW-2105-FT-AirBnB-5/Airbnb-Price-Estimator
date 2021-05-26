@@ -57,19 +57,21 @@ async def predict():
     - 'days_until_booking' : int
 
     ### Response
-    - `prediction`: estimate of expected price   
+    - `prediction_high`: estimate of 75th percentile price
+    - 'prediction_medium': estimate of mean price - not percentile
+    - 'prediction_low': estimate of 25th percentile price  
 
     
     """
     rentalunit = RentalUnit()
     rentdict = dict(rentalunit)
+    
     df = pd.DataFrame(jsonable_encoder(rentalunit), index = [0])
-    # # rentdf = rentalunit.to_df()
-    # rentdf = pd.DataFrame(rentdict, index = [0])
-    # # # log.info(RU_df)
+    
     high_pred = (model_high.predict(df)).astype(int)
     medium_pred = (model_medium.predict(df)).astype(int)
     low_pred = (model_low.predict(df)).astype(int)
+    
     return {
         'prediction high': str(high_pred[0]),
         'prediction medium': str(medium_pred[0]),
