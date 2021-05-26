@@ -19,7 +19,6 @@ sqlalchemy = "*"
 uvicorn = {extras = ["standard"], version = "*"}
 category-encoders = "==2.2.2"
 sklearn = "*"
-xgboost = "==0.90"
 catboost = "==0.25.1"
 scikit-learn = "*"
 

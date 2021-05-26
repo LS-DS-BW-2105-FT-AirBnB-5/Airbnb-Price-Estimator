@@ -3,7 +3,6 @@
 import logging
 import random
 import sklearn
-import xgboost
 import catboost
 import category_encoders
 import pickle
@@ -16,13 +15,13 @@ from fastapi.encoders import jsonable_encoder
 log = logging.getLogger(__name__)
 router = APIRouter()
 
-model_location = r'models\catboost 75.sav'
-model_locationb = r'models\catboost_50.sav'
-model_locationc = r'models\catboost_25.sav'
+model_high_location = r'models\catboost 75.sav'
+model_medium_location = r'models\catboost_50.sav'
+model_low_location = r'models\catboost_25.sav'
 
-model = pickle.load(open(model_location, 'rb'))
-modelb = pickle.load(open(model_locationb, 'rb'))
-modelc = pickle.load(open(model_locationc, 'rb'))
+model_high = pickle.load(open(model_high_location, 'rb'))
+model_medium = pickle.load(open(model_medium_location, 'rb'))
+model_low = pickle.load(open(model_low_location, 'rb'))
 
 class RentalUnit(BaseModel):
     """Use this data model to parse the request body JSON."""
@@ -68,11 +67,11 @@ async def predict():
     # # rentdf = rentalunit.to_df()
     # rentdf = pd.DataFrame(rentdict, index = [0])
     # # # log.info(RU_df)
-    y_pred = (model.predict(df)).astype(int)
-    y_predb = (modelb.predict(df)).astype(int)
-    y_predc = (modelc.predict(df)).astype(int)
+    high_pred = (model_high.predict(df)).astype(int)
+    medium_pred = (model_medium.predict(df)).astype(int)
+    low_pred = (model_low.predict(df)).astype(int)
     return {
-        'prediction high': str(y_pred[0]),
-        'prediction medium': str(y_predb[0]),
-        'prediction low': str(y_predc[0])
+        'prediction high': str(high_pred[0]),
+        'prediction medium': str(medium_pred[0]),
+        'prediction low': str(low_pred[0])
     }
