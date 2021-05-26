@@ -19,6 +19,8 @@ sqlalchemy = "*"
 uvicorn = {extras = ["standard"], version = "*"}
 xgboost = "*"
 catboost = "*"
+sklearn = "*"
+category-encoders = "*"
 
 [requires]
 python_version = "3"
