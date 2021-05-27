@@ -58,7 +58,7 @@ async def predict(rentalUnit: RentalUnit):
 
     ### Response
     - `prediction_high`: estimate of 75th percentile price
-    - 'prediction_medium': estimate of mean price - not percentile
+    - 'prediction_medium': estimate of median (50th) price
     - 'prediction_low': estimate of 25th percentile price  
 
     
