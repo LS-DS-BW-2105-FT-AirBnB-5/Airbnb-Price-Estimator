@@ -15,8 +15,8 @@ from fastapi.encoders import jsonable_encoder
 log = logging.getLogger(__name__)
 router = APIRouter()
 
-model_high_location = r'models/catboost 75.sav'
-model_medium_location = r'models/catboost_50.sav'
+model_high_location = r'models/catboost_75b.sav'
+model_medium_location = r'models/catboost_50b.sav'
 model_low_location = r'models/catboost_25.sav'
 
 model_high = pickle.load(open(model_high_location, 'rb'))
@@ -24,7 +24,7 @@ model_medium = pickle.load(open(model_medium_location, 'rb'))
 model_low = pickle.load(open(model_low_location, 'rb'))
 
 class RentalUnit(BaseModel):
-    """Use this data model to parse the request body JSON."""
+    """A model to parse the request body JSON."""
 
     borough: str = Field(..., example='Queens')
     room_type: str = Field(..., example='room')
@@ -35,11 +35,11 @@ class RentalUnit(BaseModel):
 
     def to_df(self):
         """Convert pydantic object to pandas dataframe with 1 row."""
-        return pd.DataFrame([self.dict()])
+        return pd.DataFrame(jsonable_encoder(rentalUnit), index = [0])
 
     @validator('days_until_booking')
     def days_until_positive(cls, value):
-        """Validate that x1 is a positive number."""
+        """Validate that days until booking is a positive number."""
         assert value > 0, f'days until booking == {value}, must be > 0'
         return value
 
@@ -47,7 +47,7 @@ class RentalUnit(BaseModel):
 @router.post('/predict')
 async def predict(rentalUnit: RentalUnit):
     """
-    Make random baseline predictions for classification problem 🔮
+    Predicting a high, medium, and low price for a rental unit 🔮
 
     ### Request Body
     - `borough`: str
