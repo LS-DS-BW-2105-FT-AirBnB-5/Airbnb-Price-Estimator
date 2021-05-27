@@ -26,11 +26,11 @@ model_low = pickle.load(open(model_low_location, 'rb'))
 class RentalUnit(BaseModel):
     """Use this data model to parse the request body JSON."""
 
-    borough: str = 'Queens'
-    room_type: str = 'room'
-    accommodates: int = 4
-    day_of_week: int = 6
-    days_until_booking: int = 7
+    borough: str = Field(..., example='Queens')
+    room_type: str = Field(..., example='room')
+    accommodates: int = Field(..., example=4)
+    day_of_week: int = Field(..., example=6)
+    days_until_booking: int = Field(..., example=7)
 
 
     def to_df(self):
@@ -63,10 +63,7 @@ async def predict(rentalUnit: RentalUnit):
 
     
     """
-    rentalunit = RentalUnit()
-    rentdict = dict(rentalunit)
-    
-    df = pd.DataFrame(jsonable_encoder(rentalunit), index = [0])
+    df = pd.DataFrame(jsonable_encoder(rentalUnit), index = [0])
     log.info(df)
     high_pred = (model_high.predict(df)).astype(int)
     medium_pred = (model_medium.predict(df)).astype(int)
