@@ -15,9 +15,9 @@ from fastapi.encoders import jsonable_encoder
 log = logging.getLogger(__name__)
 router = APIRouter()
 
-model_high_location = r'models\catboost 75.sav'
-model_medium_location = r'models\catboost_50.sav'
-model_low_location = r'models\catboost_25.sav'
+model_high_location = r'models/catboost 75.sav'
+model_medium_location = r'models/catboost_50.sav'
+model_low_location = r'models/catboost_25.sav'
 
 model_high = pickle.load(open(model_high_location, 'rb'))
 model_medium = pickle.load(open(model_medium_location, 'rb'))
