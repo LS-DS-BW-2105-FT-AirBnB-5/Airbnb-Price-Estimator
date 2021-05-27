@@ -45,7 +45,7 @@ class RentalUnit(BaseModel):
 
 
 @router.post('/predict')
-async def predict():
+async def predict(rentalUnit: RentalUnit):
     """
     Make random baseline predictions for classification problem 🔮
 
@@ -67,7 +67,7 @@ async def predict():
     rentdict = dict(rentalunit)
     
     df = pd.DataFrame(jsonable_encoder(rentalunit), index = [0])
-    
+    log.info(df)
     high_pred = (model_high.predict(df)).astype(int)
     medium_pred = (model_medium.predict(df)).astype(int)
     low_pred = (model_low.predict(df)).astype(int)
